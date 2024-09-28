@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patension</title>
 </head>
+
 <body>
-    <label for="bib">Je travaille à la </label>
-    <select name="bib" id="bib">
-        <option value="">-- Choisir sa bibliothèque --</option>
-        <option value="VAL">Bibliothèque du Val d'Auron</option>
-        <option value="GIB">Bibliothèque des Gibjoncs</option>
-        <option value="PIL">Bibliothèque des 4 Piliers</option>
-        <option value="MED">Médiathèque</option>
-    </select>
+    <section id="getInfos">
+        <label for="bibSelect">Je travaille à </label>
+        <select name="bibSelect" id="bibSelect">
+            <option value="">-- Choisir sa bibliothèque --</option>
+            <option value="VAL">la Bibliothèque du Val d'Auron</option>
+            <option value="GIB">la Bibliothèque des Gibjoncs</option>
+            <option value="PIL">la Bibliothèque des 4 Piliers</option>
+            <option value="MED">la Médiathèque</option>
+        </select>
+        <ul id="wekendSelect" hidden>
+            <li> Le weekend de <strong>Pâques, </strong> jours de weekend <strong>devaient</strong> tomber
+                <label for="weekSelectEaster"></label>
+                <select name="weekSelectEaster" id="weekSelectEaster">
+                    <option value="">-- Choisir le type de weekend --</option>
+                    <option value="SD">samedi et dimanche</option>
+                    <option value="D">dimanche</option>
+                    <option value="DL">dimanche et lundi</option>
+                    <option value="SDL">samedi, dimanche et lundi</option>
+                </select>
+            </li>
+            <li> Le weekend de la <strong>Pentecôt</strong>e, mes jours de weekend <strong>devaient</strong> tomber
+                <label for="weekSelectPentecost"></label>
+                <select name="weekSelectPentecost" id="weekSelectPentecost">
+                    <option value="">-- Choisir le type de weekend --</option>
+                    <option value="SD">Samedi/Dimanche</option>
+                    <option value="D">Dimanche</option>
+                    <option value="DL">Dimanche/Lundi</option>
+                    <option value="SDL">Samedi/Dimanche/Lundi</option>
+                </select>
+            </li>
+        </ul>
+    </section>
+    <section id="results">
+        <div>
+            lundi de Pâques : <span id="easter"></span>
+        </div>
+        <div>
+            lundi de la Pentecôte : <span id="pentecost"></span>
+        </div>
+        <div>
+            <p>Pont de l'Ascension :</p>
+
+            <ul id="ascension">
+                <li>vendredi : <span id="fridayAsc"></span></li>
+                <li>samedi : <span id="saturdayAsc"></span></li>
+            </ul>
+            <span id=""></span>
+        </div>
+    </section>
 </body>
+<script src="./js/script.js"></script>
+
 </html>
