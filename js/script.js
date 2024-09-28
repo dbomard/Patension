@@ -72,9 +72,9 @@ function bibSelect(e) {
     case "PIL":
       setResults(
         true,
-        "jour de weekend",
-        "jour de weekend",
-        "jour de repos en compensation du lundi de Pâques",
+        "je ne pose rien. jour de weekend",
+        "je ne pose rien. jour de weekend",
+        "je ne pose rien. jour de repos en compensation du lundi de Pâques",
         "je pose RTT ou RECHS pour journée de solidarité"
       );
       break;
