@@ -44,21 +44,21 @@ function weekendSelect(e) {
 
   if (weekend.name === "weekSelectEaster") {
     if (e.currentTarget.value.includes("L")) {
-      easterText = "je ne pose rien (jour de weekend)";
-      fridayAscText = "je ne pose rien (jour de repos en compensation du lundi de Pâques)";
+      easterText = "je ne pose rien (jour de weekend). Jour férié perdu";
+      saturdayAscText = "si ce n'est pas mon samedi de weekend,je pose CA, RTT ou RECHS sinon, je suis en repos";
     } else {
       easterText = "je ne pose rien (je bénéficie du jour férié)";
-      fridayAscText = "je pose CA, RTT ou RECHS";
+      saturdayAscText = "si ce n'est pas mon samedi de weekend,je pose CA, RTT ou RECHS sinon, je suis en repos";
     }
   } else if (weekend.name === "weekSelectPentecost") {
     if (e.currentTarget.value.includes("L")) {
       pentecostText =
-        "je ne pose rien (jour de weekend)";
-      saturdayAscText = "je pose RTT ou RECHS pour journée de solidarité";
+        "je ne pose rien (jour de weekend). Jour férié perdu";
+        fridayAscText = "je pose RTT ou RECHS pour journée de solidarité";
     } else {
       pentecostText =
         "je pose RTT ou RECHS pour journée de solidarité";
-      saturdayAscText = "je pose CA, RTT ou RECHS";
+        fridayAscText = "je pose CA, RTT ou RECHS";
     }
   }
   setResults(false, easterText, pentecostText, fridayAscText, saturdayAscText);
