@@ -12,7 +12,7 @@
 <body>
     <main class="container">
         <section id="getInfos">
-            <fieldset>
+            <article>
                 <label for="bibSelect">Je travaille à :</label>
                 <select name="bibSelect" id="bibSelect">
                     <option value="">-- Choisir sa bibliothèque --</option>
@@ -21,60 +21,52 @@
                     <option value="PIL">la Bibliothèque des 4 Piliers</option>
                     <option value="MED">la Médiathèque</option>
                 </select>
-            </fieldset>
-            <ul id="weekendSelect" hidden>
-                <fieldset role="group">
-                    <li class="nodeco"> À <strong>Pâques</strong>, mes jours de weekend sont :
-                        <label for="weekSelectEaster"></label>
-                        <select name="weekSelectEaster" id="weekSelectEaster">
-                            <option value="">-- Choisir les jours de weekend --</option>
-                            <option value="SD">samedi et dimanche</option>
-                            <option value="D">dimanche</option>
-                            <option value="DL">dimanche et lundi</option>
-                            <option value="SDL">samedi, dimanche et lundi</option>
-                        </select>
-                    </li>
-                </fieldset>
-                <fieldset role="group">
-                    <li class="nodeco"> À la <strong>Pentecôte</strong>, mes jours de weekend sont :
-                        <label for="weekSelectPentecost"></label>
-                        <select name="weekSelectPentecost" id="weekSelectPentecost">
-                            <option value="">-- Choisir les jours de weekend --</option>
-                            <option value="SD">samedi et dimanche</option>
-                            <option value="D">dimanche</option>
-                            <option value="DL">dimanche et lundi</option>
-                            <option value="SDL">samedi, dimanche et lundi</option>
-                        </select>
-                    </li>
-                </fieldset>
-                <fieldset role="group">
-                    <li class="nodeco"> Après l'<strong>Ascension</strong>, mes jours de weekend sont :
-                        <label for="weekSelectAscension"></label>
-                        <select name="weekSelectAscension" id="weekSelectAscension">
-                            <option value="">-- Choisir les jours de weekend --</option>
-                            <option value="SD">samedi et dimanche</option>
-                            <option value="D">dimanche</option>
-                            <option value="DL">dimanche et lundi</option>
-                            <option value="SDL">samedi, dimanche et lundi</option>
-                        </select>
-                    </li>
-                </fieldset>
-            </ul>
+            </article>
+            <article id="weekendSelect" hidden>
+                <label> À <strong>Pâques</strong>, mes jours de weekend sont :
+                    <select name="weekSelectEaster" id="weekSelectEaster">
+                        <option value="">-- Choisir les jours de weekend --</option>
+                        <option value="SD">samedi et dimanche</option>
+                        <option value="D">dimanche</option>
+                        <option value="DL">dimanche et lundi</option>
+                        <option value="SDL">samedi, dimanche et lundi</option>
+                    </select>
+                </label>
+                <label> À la <strong>Pentecôte</strong>, mes jours de weekend sont :
+                    <select name="weekSelectPentecost" id="weekSelectPentecost">
+                        <option value="">-- Choisir les jours de weekend --</option>
+                        <option value="SD">samedi et dimanche</option>
+                        <option value="D">dimanche</option>
+                        <option value="DL">dimanche et lundi</option>
+                        <option value="SDL">samedi, dimanche et lundi</option>
+                    </select>
+                </label>
+                <label> Après l'<strong>Ascension</strong>, mes jours de weekend sont :
+                    <select name="weekSelectAscension" id="weekSelectAscension">
+                        <option value="">-- Choisir les jours de weekend --</option>
+                        <option value="SD">samedi et dimanche</option>
+                        <option value="D">dimanche</option>
+                        <option value="DL">dimanche et lundi</option>
+                        <option value="SDL">samedi, dimanche et lundi</option>
+                    </select>
+                </label>
+            </article>
         </section>
-        <section id="results">
+        <article id="results">
             <ul>
                 <li class="listresults">
                     <p>
-                        Pour le lundi de Pâques : <span class="redish" id="easter" data-day=""></span>
+                        Pour le lundi de <mark>Pâques</mark> : <span class="redish" id="easter" data-day=""></span>
                     </p>
                 </li>
                 <li class="listresults">
                     <p>
-                        Pour le lundi de la Pentecôte : <span class="redish" id="pentecost" data-day=""></span>
+                        Pour le lundi de la <mark>Pentecôte</mark> : <span class="redish" id="pentecost"
+                            data-day=""></span>
                     </p>
                 </li>
                 <li class="listresults">
-                    <p class="nobottommargin">Pour le pont de l'Ascension :</p>
+                    <p class="nobottommargin">Pour le pont de l'<mark>Ascension</mark> :</p>
                     <ul id="ascension">
                         <li class="subresults">Le vendredi : <span id="fridayAsc" data-day="" class="redish"></span>
                         </li>
@@ -83,7 +75,7 @@
                     </ul>
                 </li>
             </ul>
-        </section>
+        </article>
     </main>
 </body>
 <script src="./js/script.js"></script>
