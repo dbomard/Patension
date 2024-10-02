@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bibSelectElt = document.querySelector("#bibSelect");
   console.log(bibSelectElt);
   bibSelectElt.addEventListener("change", bibSelect);
-  const weekendSelectors = document.querySelectorAll("#wekendSelect select");
+  const weekendSelectors = document.querySelectorAll("#weekendSelect select");
   weekendSelectors.forEach((elt) => {
     elt.addEventListener("change", weekendSelect);
   });
@@ -16,7 +16,7 @@ function setResults(
   fridayAscText,
   saturdayAscText
 ) {
-  const weekendListElt = document.querySelector("#wekendSelect");
+  const weekendListElt = document.querySelector("#weekendSelect");
   const easter = document.querySelector("#easter");
   const pentecost = document.querySelector("#pentecost");
   const fridayAsc = document.querySelector("#fridayAsc");
@@ -27,6 +27,8 @@ function setResults(
     weekSelectEaster.value = "";
     const weekSelectPentecost = document.querySelector("#weekSelectPentecost");
     weekSelectPentecost.value = "";
+    const weekSelectAscension = document.querySelector("#weekSelectAscension");
+    weekSelectAscension.value = "";
   }
   weekendListElt.hidden = weekendListHide;
   easter.innerText = easterText;
@@ -45,20 +47,22 @@ function weekendSelect(e) {
   if (weekend.name === "weekSelectEaster") {
     if (e.currentTarget.value.includes("L")) {
       easterText = "je ne pose rien (jour de weekend). Jour férié perdu";
-      saturdayAscText = "si ce n'est pas mon samedi de weekend,je pose CA, RTT ou RECHS sinon, je suis en repos";
     } else {
       easterText = "je ne pose rien (je bénéficie du jour férié)";
-      saturdayAscText = "si ce n'est pas mon samedi de weekend,je pose CA, RTT ou RECHS sinon, je suis en repos";
     }
   } else if (weekend.name === "weekSelectPentecost") {
     if (e.currentTarget.value.includes("L")) {
-      pentecostText =
-        "je ne pose rien (jour de weekend). Jour férié perdu";
-        fridayAscText = "je pose RTT ou RECHS pour journée de solidarité";
+      pentecostText = "je ne pose rien (jour de weekend). Jour férié perdu";
+      fridayAscText = "je pose RTT ou RECHS pour journée de solidarité";
     } else {
-      pentecostText =
-        "je pose RTT ou RECHS pour journée de solidarité";
-        fridayAscText = "je pose CA, RTT ou RECHS";
+      pentecostText = "je pose RTT ou RECHS pour journée de solidarité";
+      fridayAscText = "je pose CA, RTT ou RECHS";
+    }
+  } else if (weekend.name === "weekSelectAscension") {
+    if (e.currentTarget.value.includes("S")) {
+      saturdayAscText = "je ne pose rien (jour de weekend)";
+    } else {
+      saturdayAscText = "je pose CA, RTT ou RECHS";
     }
   }
   setResults(false, easterText, pentecostText, fridayAscText, saturdayAscText);
@@ -74,8 +78,8 @@ function bibSelect(e) {
         true,
         "je ne pose rien. jour de weekend",
         "je ne pose rien. jour de weekend",
-        "je ne pose rien. jour de repos en compensation du lundi de Pâques",
-        "je pose RTT ou RECHS pour journée de solidarité"
+        "je pose RTT ou RECHS pour journée de solidarité",
+        "je ne pose rien. jour de repos en compensation du lundi de Pâques"
       );
       break;
     case "MED":

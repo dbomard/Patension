@@ -1,0 +1,19 @@
+.nodeco {
+    list-style-type: none;
+}
+
+.listresults {
+    list-style-type: circle;
+}
+
+.subresults {
+    list-style-type: "=>";
+}
+
+.redish {
+    color: brown;
+}
+
+.nobottommargin {
+    margin-bottom: 0px;
+}

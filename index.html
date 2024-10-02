@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patension</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -21,9 +22,9 @@
                     <option value="MED">la Médiathèque</option>
                 </select>
             </fieldset>
-            <ul id="wekendSelect" hidden>
+            <ul id="weekendSelect" hidden>
                 <fieldset role="group">
-                    <li> Le weekend de <strong>Pâques</strong>, mes jours de weekend <strong>devaient</strong> être :
+                    <li class="nodeco"> À <strong>Pâques</strong>, mes jours de weekend sont :
                         <label for="weekSelectEaster"></label>
                         <select name="weekSelectEaster" id="weekSelectEaster">
                             <option value="">-- Choisir les jours de weekend --</option>
@@ -35,10 +36,21 @@
                     </li>
                 </fieldset>
                 <fieldset role="group">
-                    <li> Le weekend de la <strong>Pentecôte</strong>, mes jours de weekend <strong>devaient</strong>
-                        être :
+                    <li class="nodeco"> À la <strong>Pentecôte</strong>, mes jours de weekend sont :
                         <label for="weekSelectPentecost"></label>
                         <select name="weekSelectPentecost" id="weekSelectPentecost">
+                            <option value="">-- Choisir les jours de weekend --</option>
+                            <option value="SD">samedi et dimanche</option>
+                            <option value="D">dimanche</option>
+                            <option value="DL">dimanche et lundi</option>
+                            <option value="SDL">samedi, dimanche et lundi</option>
+                        </select>
+                    </li>
+                </fieldset>
+                <fieldset role="group">
+                    <li class="nodeco"> Après l'<strong>Ascension</strong>, mes jours de weekend sont :
+                        <label for="weekSelectAscension"></label>
+                        <select name="weekSelectAscension" id="weekSelectAscension">
                             <option value="">-- Choisir les jours de weekend --</option>
                             <option value="SD">samedi et dimanche</option>
                             <option value="D">dimanche</option>
@@ -50,21 +62,27 @@
             </ul>
         </section>
         <section id="results">
-            <div>
-                lundi de Pâques : <span id="easter"></span>
-            </div>
-            <div>
-                lundi de la Pentecôte : <span id="pentecost"></span>
-            </div>
-            <div>
-                <p>Pont de l'Ascension :</p>
-
-                <ul id="ascension">
-                    <li>vendredi : <span id="fridayAsc"></span></li>
-                    <li>samedi : <span id="saturdayAsc"></span></li>
-                </ul>
-                <span id=""></span>
-            </div>
+            <ul>
+                <li class="listresults">
+                    <p>
+                        Pour le lundi de Pâques : <span class="redish" id="easter" data-day=""></span>
+                    </p>
+                </li>
+                <li class="listresults">
+                    <p>
+                        Pour le lundi de la Pentecôte : <span class="redish" id="pentecost" data-day=""></span>
+                    </p>
+                </li>
+                <li class="listresults">
+                    <p class="nobottommargin">Pour le pont de l'Ascension :</p>
+                    <ul id="ascension">
+                        <li class="subresults">Le vendredi : <span id="fridayAsc" data-day="" class="redish"></span>
+                        </li>
+                        <li class="subresults">Le samedi : <span id="saturdayAsc" data-day="" class="redish"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </main>
 </body>
